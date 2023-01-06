@@ -1,9 +1,9 @@
 {
-  "author": "Divyanshu Shekhar",
-  "name": "react-component-library-template",
-  "description": "Template for creating react component library",
+  "name": "react-animated-modal",
+  "description": "Animated modal dialog component for react",
   "version": "1.0.0",
   "license": "ISC",
+  "author": "Dorbus",
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

@@ -1,12 +1,5 @@
-# React Component Library Template
+# React Animated Modal
 
-A template for creating react component library using:
+Animated modal dialog component for React.
 
-- Bundling: rollup
-- Language: typescript
-- Transpiler - babel
-- Testing: jest
-- UI component visualization - Storybook
-- Linting: eslint
-- Formatting: prettier
-- pre-commit-check: husky & lint-staged
+> This component library is inspired from [Jesse Couch](https://codepen.io/designcouch)'s [Animated Modal](https://codepen.io/designcouch/pen/obvKxm) codepen.
