@@ -1,1 +1,1 @@
-export { default as Button } from './button';
+export { AnimatedModal } from './animatedModal';
