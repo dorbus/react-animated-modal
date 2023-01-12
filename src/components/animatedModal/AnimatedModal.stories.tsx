@@ -24,25 +24,31 @@ const AnimatedModalTemplate: Story = () => {
       <AnimatedModalFrame>
         <button onClick={() => ref.current?.OpenModal()}>Open Unfold Modal</button>
         <br />
+        <br />
         <button onClick={() => ref.current?.OpenModal(ModalAnimation.Reveal)}>
           Open Reveal Modal
         </button>
+        <br />
         <br />
         <button onClick={() => ref.current?.OpenModal(ModalAnimation.Uncover)}>
           Open Uncover Modal
         </button>
         <br />
+        <br />
         <button onClick={() => ref.current?.OpenModal(ModalAnimation.Flash)}>
           Open Flash Modal
         </button>
+        <br />
         <br />
         <button onClick={() => ref.current?.OpenModal(ModalAnimation.Sketch)}>
           Open Sketch Modal
         </button>
         <br />
+        <br />
         <button onClick={() => ref.current?.OpenModal(ModalAnimation.Slide)}>
           Open Slide Modal
         </button>
+        <br />
         <br />
         <button onClick={() => ref.current?.OpenModal(ModalAnimation.BlowUp)}>
           Open BlowUp Modal

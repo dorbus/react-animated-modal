@@ -49,12 +49,12 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
   }, [props.isOpen]);
 
   function onBackgroundClick() {
-    setModalClass('out');
+    setModalClass(modalClass + ' ' + 'out');
     document.body.classList.remove('modal-active');
   }
 
   return (
-    <div id="modal-container" className={modalClass} onClick={() => onBackgroundClick()}>
+    <div id="modal-container" className={modalClass} onClick={onBackgroundClick}>
       <div className="modal-background">
         <div className="modal">
           {props.children ? (
