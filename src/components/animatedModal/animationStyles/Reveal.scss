@@ -1,0 +1,98 @@
+#modal-container {
+    &.reveal {
+        transform:scale(1);
+        .modal-background {
+          background:rgba(0,0,0,.0);
+          animation: RevealFadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+          .modal {
+            opacity:0;
+            animation: RevealScaleUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+          }
+        }
+        + .content {
+          animation: RevealScaleBack .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+        }
+        &.out {
+          animation: RevealQuickScaleDown 0s .5s linear forwards;
+          .modal-background {
+            animation: RevealFadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            .modal {
+               animation: RevealScaleDown .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            }
+          }
+          + .content {
+            animation: RevealScaleForward .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+          }
+        }
+      }
+}
+
+@keyframes RevealFadeIn {
+  0% {
+    background:rgba(0,0,0,.0);
+  }
+  100% {
+    background:rgba(0,0,0,.7);
+  }
+}
+
+@keyframes RevealFadeOut {
+  0% {
+    background:rgba(0,0,0,.7);
+  }
+  100% {
+    background:rgba(0,0,0,.0);
+  }
+}
+
+@keyframes RevealScaleUp {
+  0% {
+    transform:scale(.8) translateY(1000px);
+    opacity:0;
+  }
+  100% {
+    transform:scale(1) translateY(0px);
+    opacity:1;
+  }
+}
+
+@keyframes RevealScaleDown {
+  0% {
+    transform:scale(1) translateY(0px);
+    opacity:1;
+  }
+  100% {
+    transform:scale(.8) translateY(1000px);
+    opacity:0;
+  }
+}
+
+@keyframes RevealScaleBack {
+  0% {
+    transform:scale(1);
+  }
+  100% {
+    transform:scale(.85);
+  }
+}
+
+@keyframes RevealScaleForward {
+  0% {
+    transform:scale(.85);
+  }
+  100% {
+    transform:scale(1);
+  }
+}
+
+@keyframes RevealQuickScaleDown {
+  0% {
+    transform:scale(1);
+  }
+  99.9% {
+    transform:scale(1);
+  }
+  100% {
+    transform:scale(0);
+  }
+}

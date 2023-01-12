@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useImperativeHandle, forwardRef } from 'react';
 
-import './AnimatedModal.styles.css';
 import './AnimatedModal.styles.scss';
 
 import { Animation } from './Animation.enums';
@@ -134,11 +133,6 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
       </div> */
   );
 };
-
-// AnimatedModal.defaultProps = {
-//   isOpen: false,
-//   animation: Animation.Unfold
-// };
 
 AnimatedModal.displayName = 'AnimatedModal';
 export default forwardRef(AnimatedModal);

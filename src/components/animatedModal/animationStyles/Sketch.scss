@@ -1,0 +1,128 @@
+#modal-container {
+    &.sketch {
+        transform:scale(1);
+        .modal-background {
+          background:rgba(0,0,0,.0);
+          animation: SketchFadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+          .modal {
+            background-color:transparent;
+            animation: SketchModalFadeIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            h2,p {
+              opacity:0;
+              position:relative;
+              animation: SketchModalContentFadeIn .5s 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            }
+            .modal-svg {
+              rect {
+                animation: SketchIn .5s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+              }
+            }
+          }
+        }
+        &.out {
+          animation: SketchQuickScaleDown 0s .5s linear forwards;
+          .modal-background {
+            animation: SketchFadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            .modal {
+              animation: SketchModalFadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+              h2,p {
+                animation: SketchModalContentFadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+              }
+              .modal-svg {
+                rect {
+                  animation: SketchOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+                }
+              }
+            }
+          }
+        }
+      }
+}
+
+@keyframes SketchFadeIn {
+    0% {
+      background:rgba(0,0,0,.0);
+    }
+    100% {
+      background:rgba(0,0,0,.7);
+    }
+  }
+  
+  @keyframes SketchFadeOut {
+    0% {
+      background:rgba(0,0,0,.7);
+    }
+    100% {
+      background:rgba(0,0,0,.0);
+    }
+  }
+
+  @keyframes SketchModalFadeIn {
+    0% {
+      background-color:transparent;
+    }
+    100% {
+      background-color:white;
+    }
+  }
+  
+  @keyframes SketchModalFadeOut {
+    0% {
+      background-color:white;
+    }
+    100% {
+      background-color:transparent;
+    }
+  }
+
+  @keyframes SketchModalContentFadeIn {
+    0% {
+      opacity:0;
+      top:-20px;
+    }
+    100% {
+      opacity:1;
+      top:0;
+    }
+  }
+  
+  @keyframes SketchModalContentFadeOut {
+    0% {
+      opacity:1;
+      top:0px;
+    }
+    100% {
+      opacity:0;
+      top:-20px;
+    }
+  }
+
+  @keyframes SketchIn {
+	0% {
+		stroke-dashoffset: 778;
+	}
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes SketchOut {
+	0% {
+		stroke-dashoffset: 0;
+	}
+	100% {
+		stroke-dashoffset: 778;
+	}
+}
+
+@keyframes SketchQuickScaleDown {
+  0% {
+    transform:scale(1);
+  }
+  99.9% {
+    transform:scale(1);
+  }
+  100% {
+    transform:scale(0);
+  }
+}

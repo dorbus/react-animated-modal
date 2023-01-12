@@ -1,0 +1,123 @@
+#modal-container {
+    &.slide {
+        transform:scale(1);
+        .modal-background {
+          background:rgba(0,0,0,.0);
+          animation: SlideFadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+          .modal {
+            height:75px;
+            width:75px;
+            border-radius:75px;
+            overflow:hidden;
+            animation: SlideCircleToRect 1.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            h2,p {
+              opacity:0;
+              position:relative;
+              animation: SlideModalContentFadeIn .5s 1.4s linear forwards;
+            }
+          }
+        }
+        &.out {
+          animation: SlideSlowFadeOut .5s 1.5s linear forwards;
+          .modal-background {
+            background-color:rgba(0,0,0,.7);
+            animation: SlideFadeToRed 2s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            .modal {
+              border-radius:3px;
+              height:162px;
+              width:227px;
+              animation: SlideRotate 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+              h2,p {
+                animation: SlideModalContentFadeOut .5s .5 cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+              }
+            }
+          }
+        }
+      }
+}
+
+@keyframes SlideFadeIn {
+    0% {
+      background:rgba(0,0,0,.0);
+    }
+    100% {
+      background:rgba(0,0,0,.7);
+    }
+  }
+
+@keyframes SlideCircleToRect {
+    0% {
+      transform:translateX(1000px);
+    }
+    80% {
+      transform:translateX(0px);
+      border-radius:75px;
+      height:75px;
+      width:75px;
+    }
+    90% {
+      border-radius:3px;
+      height:182px;
+      width:247px;
+    }
+    100% {
+      border-radius:3px;
+      height:162px;
+      width:227px;
+    }
+  }
+  
+@keyframes SlideRotate {
+    0% {
+      transform:translateY(0) rotate(0deg);
+      opacity:1;
+    }
+    100% {
+      transform:translateY(300px) rotate(45deg);
+      opacity:0;
+    }
+  }
+  
+@keyframes SlideFadeToRed {
+    0% {
+      background-color:rgba(black,.6);
+    }
+    100% {
+      background-color:rgba(red,.8);
+    }
+  }
+  
+@keyframes SlideSlowFadeOut {
+    0% {
+      opacity:1;
+    }
+    99.9% {
+      opacity:0;
+      transform:scale(1);
+    }
+    100% {
+      transform:scale(0);
+    }
+  }
+
+  @keyframes SlideModalContentFadeIn {
+    0% {
+      opacity:0;
+      top:-20px;
+    }
+    100% {
+      opacity:1;
+      top:0;
+    }
+  }
+  
+  @keyframes SlideModalContentFadeOut {
+    0% {
+      opacity:1;
+      top:0px;
+    }
+    100% {
+      opacity:0;
+      top:-20px;
+    }
+  }

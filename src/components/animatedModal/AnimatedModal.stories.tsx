@@ -2,8 +2,7 @@ import { Story } from '@storybook/react';
 import { Meta } from '@storybook/react/types-6-0';
 import React, { useRef } from 'react';
 
-import { AnimatedModal, Animation } from '../../components';
-import { AnimatedModalObject } from './AnimatedModal';
+import { AnimatedModal, AnimatedModalObject, Animation } from '../../components';
 
 export default {
   title: 'Components/AnimatedModal',
@@ -24,8 +23,8 @@ const AnimatedModalTemplate: Story = () => {
 
   return (
     <>
+      <AnimatedModal ref={ref} animation={Animation.Flash} />
       <button onClick={onButtonClick}>Open Modal</button>
-      <AnimatedModal ref={ref} animation={Animation.Unfold} />
     </>
   );
 };
