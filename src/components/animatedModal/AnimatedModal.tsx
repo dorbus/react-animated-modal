@@ -2,16 +2,17 @@ import React, { useEffect, useState, useImperativeHandle, forwardRef } from 'rea
 
 import './AnimatedModal.styles.scss';
 
-import { Animation } from './Animation.enums';
+import { ModalAnimation } from './AnimatedModal.enums';
 
 interface IAnimatedModalProps {
   isOpen?: boolean;
-  animation: Animation;
+  animation: ModalAnimation;
   children?: React.ReactNode;
 }
 
 export type AnimatedModalObject = {
-  OpenModal: () => void;
+  // eslint-disable-next-line no-unused-vars
+  OpenModal: (modalAnimation?: ModalAnimation) => void;
 };
 
 /**
@@ -28,15 +29,15 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
   useImperativeHandle(
     ref,
     () => {
-      console.log('useImperativeHandle Called');
       return { OpenModal };
     },
     [props.animation]
   );
 
-  function OpenModal() {
-    console.log('OpenModal Called');
-    setModalClass(props.animation);
+  function OpenModal(modalAnimation?: ModalAnimation) {
+    if (modalAnimation) setModalClass(modalAnimation);
+    else setModalClass(props.animation);
+
     document.body.classList.add('modal-active');
   }
 

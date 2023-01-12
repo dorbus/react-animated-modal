@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-export enum Animation {
+export enum ModalAnimation {
   Reveal = 'reveal',
   Unfold = 'unfold',
   Uncover = 'uncover',
