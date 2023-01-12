@@ -55,6 +55,9 @@ const AnimatedModalTemplate: Story = () => {
         <button onClick={() => ref.current?.OpenModal(ModalAnimation.BlowUp)}>
           Open BlowUp Modal
         </button>
+        <br />
+        <br />
+        <button onClick={() => ref.current?.CloseModal()}>Close Modal</button>
       </AnimatedModalFrame>
     </>
   );

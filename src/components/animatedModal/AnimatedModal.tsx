@@ -14,6 +14,7 @@ export type AnimatedModalObject = {
   // eslint-disable-next-line no-unused-vars
   OpenModal: (modalAnimation?: ModalAnimation) => void;
   CloseModal: () => void;
+  IsModalOpen: () => boolean;
 };
 
 /**
@@ -30,16 +31,31 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
   useImperativeHandle(
     ref,
     () => {
-      return { OpenModal: OpenModal, CloseModal: onBackgroundClick };
+      return {
+        OpenModal: openModal,
+        CloseModal: closeModal,
+        IsModalOpen: isModalOpen
+      };
     },
     [props.animation]
   );
 
-  function OpenModal(modalAnimation?: ModalAnimation) {
+  function openModal(modalAnimation?: ModalAnimation) {
     if (modalAnimation) setModalClass(modalAnimation);
     else setModalClass(props.animation);
 
     document.body.classList.add('modal-active');
+  }
+
+  function isModalOpen(): boolean {
+    // Modal is not open if
+    // modalClass is empty and if it doesn't contain 'out'
+    return modalClass !== '' && !modalClass.includes('out');
+  }
+
+  function closeModal() {
+    if (isModalOpen()) onBackgroundClick();
+    else console.log('[AnimatedModal] CloseModal() called when no modal is open!');
   }
 
   useEffect(() => {
@@ -77,62 +93,6 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
         </div>
       </div>
     </div>
-    /* <div className="content">
-        <h1>Modal Animations</h1>
-        <div className="buttons">
-          <div
-            className="button"
-            onClick={() => {
-              setModalClass('one');
-              document.body.classList.add('modal-active');
-            }}>
-            Unfolding
-          </div>
-          <div
-            className="button"
-            onClick={() => {
-              return setModalClass('two');
-            }}>
-            Revealing
-          </div>
-          <div
-            className="button"
-            onClick={() => {
-              return setModalClass('three');
-            }}>
-            Uncovering
-          </div>
-          <div
-            className="button"
-            onClick={() => {
-              return setModalClass('four');
-            }}>
-            Blow Up
-          </div>
-          <br />
-          <div
-            className="button"
-            onClick={() => {
-              return setModalClass('five');
-            }}>
-            Meep Meep
-          </div>
-          <div
-            className="button"
-            onClick={() => {
-              return setModalClass('six');
-            }}>
-            Sketch
-          </div>
-          <div
-            className="button"
-            onClick={() => {
-              return setModalClass('seven');
-            }}>
-            Bond
-          </div>
-        </div>
-      </div> */
   );
 };
 
