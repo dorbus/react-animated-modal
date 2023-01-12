@@ -25,7 +25,6 @@ export type AnimatedModalObject = {
 const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalObject>) => {
   // States
   const [modalClass, setModalClass] = useState('');
-  // const modalRef = React.useRef<AnimatedModalObject>(null);
 
   useImperativeHandle(
     ref,

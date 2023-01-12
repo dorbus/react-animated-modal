@@ -23,9 +23,10 @@ const AnimatedModalTemplate: Story = () => {
   }
 
   return (
-    <button onClick={onButtonClick}>
+    <>
+      <button onClick={onButtonClick}>Open Modal</button>
       <AnimatedModal ref={ref} animation={Animation.Unfold} />
-    </button>
+    </>
   );
 };
 
