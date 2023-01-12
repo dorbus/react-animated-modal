@@ -2,7 +2,12 @@ import { Story } from '@storybook/react';
 import { Meta } from '@storybook/react/types-6-0';
 import React, { useRef } from 'react';
 
-import { AnimatedModal, AnimatedModalObject, ModalAnimation } from '../../components';
+import {
+  AnimatedModal,
+  AnimatedModalObject,
+  ModalAnimation,
+  AnimatedModalFrame
+} from '../../components';
 
 export default {
   title: 'Components/AnimatedModal',
@@ -16,27 +21,33 @@ const AnimatedModalTemplate: Story = () => {
   return (
     <>
       <AnimatedModal ref={ref} animation={ModalAnimation.Unfold} />
-      <button onClick={() => ref.current?.OpenModal()}>Open Unfold Modal</button>
-      <br />
-      <button onClick={() => ref.current?.OpenModal(ModalAnimation.Reveal)}>
-        Open Reveal Modal
-      </button>
-      <br />
-      <button onClick={() => ref.current?.OpenModal(ModalAnimation.Uncover)}>
-        Open Uncover Modal
-      </button>
-      <br />
-      <button onClick={() => ref.current?.OpenModal(ModalAnimation.Flash)}>Open Flash Modal</button>
-      <br />
-      <button onClick={() => ref.current?.OpenModal(ModalAnimation.Sketch)}>
-        Open Sketch Modal
-      </button>
-      <br />
-      <button onClick={() => ref.current?.OpenModal(ModalAnimation.Slide)}>Open Slide Modal</button>
-      <br />
-      <button onClick={() => ref.current?.OpenModal(ModalAnimation.BlowUp)}>
-        Open BlowUp Modal
-      </button>
+      <AnimatedModalFrame>
+        <button onClick={() => ref.current?.OpenModal()}>Open Unfold Modal</button>
+        <br />
+        <button onClick={() => ref.current?.OpenModal(ModalAnimation.Reveal)}>
+          Open Reveal Modal
+        </button>
+        <br />
+        <button onClick={() => ref.current?.OpenModal(ModalAnimation.Uncover)}>
+          Open Uncover Modal
+        </button>
+        <br />
+        <button onClick={() => ref.current?.OpenModal(ModalAnimation.Flash)}>
+          Open Flash Modal
+        </button>
+        <br />
+        <button onClick={() => ref.current?.OpenModal(ModalAnimation.Sketch)}>
+          Open Sketch Modal
+        </button>
+        <br />
+        <button onClick={() => ref.current?.OpenModal(ModalAnimation.Slide)}>
+          Open Slide Modal
+        </button>
+        <br />
+        <button onClick={() => ref.current?.OpenModal(ModalAnimation.BlowUp)}>
+          Open BlowUp Modal
+        </button>
+      </AnimatedModalFrame>
     </>
   );
 };
