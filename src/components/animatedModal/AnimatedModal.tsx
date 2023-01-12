@@ -13,6 +13,7 @@ interface IAnimatedModalProps {
 export type AnimatedModalObject = {
   // eslint-disable-next-line no-unused-vars
   OpenModal: (modalAnimation?: ModalAnimation) => void;
+  CloseModal: () => void;
 };
 
 /**
@@ -29,7 +30,7 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
   useImperativeHandle(
     ref,
     () => {
-      return { OpenModal };
+      return { OpenModal: OpenModal, CloseModal: onBackgroundClick };
     },
     [props.animation]
   );
