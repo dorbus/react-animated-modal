@@ -71,8 +71,8 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
   }
 
   return (
-    <div id="modal-container" className={modalClass} onClick={onBackgroundClick}>
-      <div className="modal-background">
+    <div id="animated-modal-container" className={modalClass} onClick={onBackgroundClick}>
+      <div className="animated-modal-background">
         <div className="modal">
           {props.children ? (
             props.children

@@ -12,7 +12,7 @@ html,body {
   }
 }
 
-#modal-container {
+#animated-modal-container {
   position:fixed;
   display:table;
   height:100%;
@@ -22,7 +22,7 @@ html,body {
   transform:scale(0);
   z-index:1;
   
-  .modal-background {
+  .animated-modal-background {
     display:table-cell;
     background:rgba(0,0,0,.8);
     text-align:center;
@@ -34,15 +34,6 @@ html,body {
       border-radius:3px;
       font-weight:300;
       position:relative;
-      h2 {
-        font-size:25px;
-        line-height:25px;
-        margin-bottom:15px;
-      }
-      p {
-        font-size:18px;
-        line-height:22px;
-      }
       .modal-svg {
         position:absolute;
         top:0;

@@ -1,7 +1,7 @@
-#modal-container {
+#animated-modal-container {
     &.sketch {
         transform:scale(1);
-        .modal-background {
+        .animated-modal-background {
           background:rgba(0,0,0,.0);
           animation: SketchFadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
           .modal {
@@ -21,7 +21,7 @@
         }
         &.out {
           animation: SketchQuickScaleDown 0s .5s linear forwards;
-          .modal-background {
+          .animated-modal-background {
             animation: SketchFadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
             .modal {
               animation: SketchModalFadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;

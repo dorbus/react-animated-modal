@@ -5,7 +5,7 @@ interface IAnimatedModalProps {
 }
 
 const AnimatedModalFrame: FC<IAnimatedModalProps> = (props) => {
-  return <div className="content">{props.children}</div>;
+  return <div id="animated-modal-frame">{props.children}</div>;
 };
 
 export default AnimatedModalFrame;
