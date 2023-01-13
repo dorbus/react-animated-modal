@@ -4,7 +4,7 @@
         .animated-modal-background {
           background:rgba(0,0,0,.0);
           animation: RevealFadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-          .modal {
+          .modal-content {
             opacity:0;
             animation: RevealScaleUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
           }
@@ -16,7 +16,7 @@
           animation: RevealQuickScaleDown 0s .5s linear forwards;
           .animated-modal-background {
             animation: RevealFadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-            .modal {
+            .modal-content {
                animation: RevealScaleDown .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
             }
           }

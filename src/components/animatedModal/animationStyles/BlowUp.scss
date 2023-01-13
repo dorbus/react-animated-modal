@@ -4,7 +4,7 @@
         transform:scale(1);
         .animated-modal-background {
           background:rgba(0,0,0,.7);
-          .modal {
+          .modal-content {
             animation: BlowUpModalIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
           }
         }
@@ -14,7 +14,7 @@
         }
         &.out {
           .animated-modal-background {
-            .modal {
+            .modal-content {
               animation: BlowUpModalOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
             }
           }

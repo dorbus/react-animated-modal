@@ -4,7 +4,7 @@
         .animated-modal-background {
           background:rgba(0,0,0,.0);
           animation: SketchFadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-          .modal {
+          .modal-content {
             background-color:transparent;
             animation: SketchModalFadeIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
             h2,p {
@@ -23,7 +23,7 @@
           animation: SketchQuickScaleDown 0s .5s linear forwards;
           .animated-modal-background {
             animation: SketchFadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-            .modal {
+            .modal-content {
               animation: SketchModalFadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
               h2,p {
                 animation: SketchModalContentFadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;

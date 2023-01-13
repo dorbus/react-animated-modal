@@ -3,7 +3,7 @@
         transform:scaleY(.01) scaleX(0);
         animation: UnfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
         .animated-modal-background {
-          .modal {
+          .modal-content {
             transform:scale(0);
             animation: UnfoldZoomIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
           }
@@ -12,7 +12,7 @@
           transform:scale(1);
           animation: UnfoldOut 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
           .animated-modal-background {
-            .modal {
+            .modal-content {
               animation: UnfoldZoomOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
             }
           }
