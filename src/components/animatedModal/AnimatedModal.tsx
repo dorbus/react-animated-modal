@@ -54,8 +54,12 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
   }
 
   function closeModal() {
-    if (isModalOpen()) onBackgroundClick();
-    else console.log('[AnimatedModal] CloseModal() called when no modal is open!');
+    if (isModalOpen()) {
+      setModalClass(modalClass + ' ' + 'out');
+      document.body.classList.remove('modal-active');
+    } else {
+      console.log('[AnimatedModal] CloseModal() called when no modal is open!');
+    }
   }
 
   useEffect(() => {
@@ -65,9 +69,10 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
     }
   }, [props.isOpen]);
 
-  function onBackgroundClick() {
-    setModalClass(modalClass + ' ' + 'out');
-    document.body.classList.remove('modal-active');
+  function onBackgroundClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    if (event.target !== event.currentTarget) return;
+
+    closeModal();
     console.log('[AnimatedModal]: Background click detected, closing modal!');
   }
 
@@ -85,8 +90,8 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
   }
 
   return (
-    <div id="animated-modal-container" className={modalClass} onClick={onBackgroundClick}>
-      <div className="animated-modal-background">
+    <div id="animated-modal-container" className={modalClass}>
+      <div className="animated-modal-background" onClick={onBackgroundClick}>
         <div className="modal">
           {props.children ? props.children : defaultModal()}
           <svg
