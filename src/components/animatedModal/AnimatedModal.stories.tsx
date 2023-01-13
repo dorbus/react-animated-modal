@@ -20,9 +20,7 @@ const AnimatedModalTemplate: Story = () => {
 
   return (
     <>
-      <AnimatedModal ref={ref} animation={ModalAnimation.Unfold}>
-        <button onClick={() => ref.current?.CloseModal()}>Close Modal</button>
-      </AnimatedModal>
+      <AnimatedModal ref={ref} animation={ModalAnimation.Unfold} />
       <AnimatedModalFrame>
         <button onClick={() => ref.current?.OpenModal()}>Open Unfold Modal</button>
         <br />
