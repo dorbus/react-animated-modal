@@ -2,9 +2,9 @@
     &.uncover {
         z-index:0;
         transform:scale(1);
-        .animated-modal-background {
+        #animated-modal-background {
           background:rgba(0,0,0,.6);
-          .modal-content {
+          #animated-modal {
             animation: UncoverMoveUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
           }
         }
@@ -13,8 +13,8 @@
           animation: UncoverSlideUpLarge .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
         }
         &.out {
-          .animated-modal-background {
-            .modal-content {
+          #animated-modal-background {
+            #animated-modal {
               animation: UncoverMoveDown .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
             }
           }

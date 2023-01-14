@@ -74,7 +74,6 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
 
     closeModal();
     console.log('[AnimatedModal]: Background click detected, closing modal!');
-    event.stopPropagation();
   }
 
   function defaultModal(): React.ReactElement {
@@ -91,18 +90,18 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
   }
 
   return (
-    <div id="animated-modal-container" className={modalClass} data-backdrop="false">
-      <div className="animated-modal-background" onClick={onBackgroundClick}>
-        <div className="modal-content">
-          {props.children ? props.children : defaultModal()}
+    <div id="animated-modal-container" className={modalClass}>
+      <div id="animated-modal-background" onClick={onBackgroundClick}>
+        <div id="animated-modal">
           <svg
-            className="modal-svg"
+            id="modal-sketch-svg"
             xmlns="http://www.w3.org/2000/svg"
             width="100%"
             height="100%"
             preserveAspectRatio="none">
             <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
           </svg>
+          <div id="modal-content">{props.children ? props.children : defaultModal()}</div>
         </div>
       </div>
     </div>

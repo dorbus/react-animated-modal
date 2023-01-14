@@ -1,16 +1,16 @@
 #animated-modal-container {
     &.slide {
         transform:scale(1);
-        .animated-modal-background {
+        #animated-modal-background {
           background:rgba(0,0,0,.0);
           animation: SlideFadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-          .modal-content {
+          #animated-modal {
             height:75px;
             width:75px;
             border-radius:75px;
             overflow:hidden;
             animation: SlideCircleToRect 1.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-            h2,p {
+            #modal-content {
               opacity:0;
               position:relative;
               animation: SlideModalContentFadeIn .5s 1.4s linear forwards;
@@ -19,15 +19,15 @@
         }
         &.out {
           animation: SlideSlowFadeOut .5s 1.5s linear forwards;
-          .animated-modal-background {
+          #animated-modal-background {
             background-color:rgba(0,0,0,.7);
             animation: SlideFadeToRed 2s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-            .modal-content {
+            #animated-modal {
               border-radius:3px;
               height:162px;
               width:227px;
               animation: SlideRotate 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-              h2,p {
+              #modal-content {
                 animation: SlideModalContentFadeOut .5s .5 cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
               }
             }

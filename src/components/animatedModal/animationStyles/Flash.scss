@@ -1,19 +1,19 @@
 #animated-modal-container {
     &.flash {
         transform:scale(1);
-        .animated-modal-background {
+        #animated-modal-background {
           background:rgba(0,0,0,.0);
           animation: FlashFadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-          .modal-content {
+          #animated-modal {
             transform:translateX(-1500px);
             animation: FlashIn .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
           }
         }
         &.out {
           animation: FlashQuickScaleDown 0s .5s linear forwards;
-          .animated-modal-background {
+          #animated-modal-background {
             animation: FlashFadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-            .modal-content {
+            #animated-modal  {
               animation: FlashOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
             }
           }

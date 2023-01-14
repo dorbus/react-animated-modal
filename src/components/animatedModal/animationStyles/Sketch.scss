@@ -1,18 +1,18 @@
 #animated-modal-container {
     &.sketch {
         transform:scale(1);
-        .animated-modal-background {
+        #animated-modal-background {
           background:rgba(0,0,0,.0);
           animation: SketchFadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-          .modal-content {
+          #animated-modal {
             background-color:transparent;
             animation: SketchModalFadeIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-            h2,p {
+            #modal-content {
               opacity:0;
               position:relative;
               animation: SketchModalContentFadeIn .5s 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
             }
-            .modal-svg {
+            #modal-sketch-svg {
               rect {
                 animation: SketchIn .5s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
               }
@@ -21,14 +21,14 @@
         }
         &.out {
           animation: SketchQuickScaleDown 0s .5s linear forwards;
-          .animated-modal-background {
+          #animated-modal-background {
             animation: SketchFadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-            .modal-content {
+            #animated-modal {
               animation: SketchModalFadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-              h2,p {
+              #modal-content {
                 animation: SketchModalContentFadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
               }
-              .modal-svg {
+              #modal-sketch-svg {
                 rect {
                   animation: SketchOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
                 }

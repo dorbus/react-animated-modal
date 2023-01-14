@@ -6,7 +6,7 @@
 @import "./animationStyles/Uncover.scss";
 @import "./animationStyles/Sketch.scss";
 
-html,body {
+body {
   &.modal-active {
     overflow: hidden;
   }
@@ -22,27 +22,28 @@ html,body {
   transform:scale(0);
   z-index:1;
   
-  .animated-modal-background {
+  #animated-modal-background {
     display:table-cell;
     background:rgba(0,0,0,.8);
     text-align:center;
     vertical-align:middle;
 
-    .modal-content {
-      background:white;
+    #animated-modal {
+      background-color:white;
       padding:50px;
       display:inline-block;
       border-radius:3px;
       font-weight:300;
       position:relative;
 
-      .modal-svg {
+      #modal-sketch-svg {
         position:absolute;
         top:0;
         left:0;
         height:100%;
         width:100%;
         border-radius:3px;
+        z-index: -1;
         
         rect {
           stroke: #fff;
