@@ -1,3 +1,57 @@
-h1 {
-    color: red;
+@import "./animationStyles/Unfold.scss";
+@import "./animationStyles/Reveal.scss";
+@import "./animationStyles/BlowUp.scss";
+@import "./animationStyles/Slide.scss";
+@import "./animationStyles/Flash.scss";
+@import "./animationStyles/Uncover.scss";
+@import "./animationStyles/Sketch.scss";
+
+body {
+  &.modal-active {
+    overflow: hidden;
+  }
+}
+
+#animated-modal-container {
+  position:fixed;
+  display:table;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  transform:scale(0);
+  z-index:1;
+  
+  #animated-modal-background {
+    display:table-cell;
+    background:rgba(0,0,0,.8);
+    text-align:center;
+    vertical-align:middle;
+
+    #animated-modal {
+      background-color:white;
+      padding:50px;
+      display:inline-block;
+      border-radius:3px;
+      font-weight:300;
+      position:relative;
+
+      #modal-sketch-svg {
+        position:absolute;
+        top:0;
+        left:0;
+        height:100%;
+        width:100%;
+        border-radius:3px;
+        z-index: -1;
+        
+        rect {
+          stroke: #fff;
+          stroke-width: 2px;
+          stroke-dasharray: 778;
+          stroke-dashoffset: 778;
+        }
+      }
+    }
+  }
 }
