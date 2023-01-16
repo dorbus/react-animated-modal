@@ -4,12 +4,26 @@ import './AnimatedModal.styles.scss';
 
 import { ModalAnimation } from './AnimatedModal.enums';
 
+/**
+ * Animated Modal's props.
+ * @interface IAnimatedModalProps
+ * @property {boolean} [isOpen] Is modal open?
+ * @property {ModalAnimation} animation Modal animation
+ * @property {React.ReactNode} [children] Modal's children
+ */
 interface IAnimatedModalProps {
   isOpen?: boolean;
   animation: ModalAnimation;
   children?: React.ReactNode;
 }
 
+/**
+ * Animated Modal's object.
+ * @type AnimatedModalObject
+ * @property {() => void} OpenModal Open modal
+ * @property {() => void} CloseModal Close modal
+ * @property {() => boolean} IsModalOpen Is modal open?
+ */
 export type AnimatedModalObject = {
   // eslint-disable-next-line no-unused-vars
   OpenModal: (modalAnimation?: ModalAnimation) => void;
@@ -25,9 +39,10 @@ export type AnimatedModalObject = {
  * @returns AnimatedModal.
  */
 const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalObject>) => {
-  // States
+  // State
   const [modalClass, setModalClass] = useState('');
 
+  // Ref methods
   useImperativeHandle(
     ref,
     () => {
@@ -40,26 +55,60 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
     [props.animation]
   );
 
-  function openModal(modalAnimation?: ModalAnimation) {
+  /**
+   * Open modal.
+   * @param {ModalAnimation} modalAnimation Modal animation
+   * @returns {void}
+   */
+  function openModal(modalAnimation?: ModalAnimation): void {
     if (modalAnimation) setModalClass(modalAnimation);
     else setModalClass(props.animation);
 
     document.body.classList.add('modal-active');
   }
 
+  /**
+   * Is modal open?
+   * @name isModalOpen
+   * @returns {boolean} Is modal open?
+   * @memberof AnimatedModal
+   */
   function isModalOpen(): boolean {
     // Modal is not open if
     // modalClass is empty and if it doesn't contain 'out'
     return modalClass !== '' && !modalClass.includes('out');
   }
 
-  function closeModal() {
+  /**
+   * Close modal.
+   * @name closeModal
+   * @returns {void} void
+   * @memberof AnimatedModal
+   * @fires isModalOpen
+   * @fires setModalClass
+   */
+  function closeModal(): void {
     if (isModalOpen()) {
       setModalClass(modalClass + ' ' + 'out');
       document.body.classList.remove('modal-active');
     } else {
       console.log('[AnimatedModal] CloseModal() called when no modal is open!');
     }
+  }
+
+  /**
+   * On background click.
+   * @name onBackgroundClick
+   * @param {React.MouseEvent<HTMLDivElement, MouseEvent>} event Event
+   * @returns {void} void
+   * @memberof AnimatedModal
+   * @fires closeModal
+   */
+  function onBackgroundClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>): void {
+    if (event.target !== event.currentTarget) return;
+
+    closeModal();
+    console.log('[AnimatedModal]: Background click detected, closing modal!');
   }
 
   useEffect(() => {
@@ -69,13 +118,11 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
     }
   }, [props.isOpen]);
 
-  function onBackgroundClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-    if (event.target !== event.currentTarget) return;
-
-    closeModal();
-    console.log('[AnimatedModal]: Background click detected, closing modal!');
-  }
-
+  /**
+   * Default modal.
+   * @name defaultModal
+   * @returns {React.ReactElement} ReactElement
+   */
   function defaultModal(): React.ReactElement {
     return (
       <>
