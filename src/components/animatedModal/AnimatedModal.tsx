@@ -10,11 +10,13 @@ import { ModalAnimation } from './AnimatedModal.enums';
  * @property {boolean} [isOpen] Is modal open?
  * @property {ModalAnimation} animation Modal animation
  * @property {React.ReactNode} [children] Modal's children
+ * @property {boolean} [closeOnBackgroundClick] Close modal on background click?
  */
 interface IAnimatedModalProps {
   isOpen?: boolean;
   animation: ModalAnimation;
   children?: React.ReactNode;
+  closeOnBackgroundClick?: boolean;
 }
 
 /**
@@ -138,7 +140,9 @@ const AnimatedModal = (props: IAnimatedModalProps, ref: React.Ref<AnimatedModalO
 
   return (
     <div id="animated-modal-container" className={modalClass}>
-      <div id="animated-modal-background" onClick={onBackgroundClick}>
+      <div
+        id="animated-modal-background"
+        onClick={props.closeOnBackgroundClick ? onBackgroundClick : undefined}>
         <div id="animated-modal">
           <svg
             id="modal-sketch-svg"
