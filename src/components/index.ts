@@ -1,6 +1,1 @@
-export {
-  AnimatedModal,
-  AnimatedModalFrame,
-  AnimatedModalObject,
-  ModalAnimation
-} from './animatedModal';
+export * from './animatedModal';
