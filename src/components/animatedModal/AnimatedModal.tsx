@@ -139,20 +139,26 @@ const AnimatedModal = forwardRef(
       );
     }
 
+    function sketchSVG(): React.ReactElement {
+      return (
+        <svg
+          id="modal-sketch-svg"
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100%"
+          preserveAspectRatio="none">
+          <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+        </svg>
+      );
+    }
+
     return (
       <div id="animated-modal-container" className={modalClass}>
         <div
           id="animated-modal-background"
           onClick={props.closeOnBackgroundClick ? onBackgroundClick : undefined}>
           <div id="animated-modal">
-            <svg
-              id="modal-sketch-svg"
-              xmlns="http://www.w3.org/2000/svg"
-              width="100%"
-              height="100%"
-              preserveAspectRatio="none">
-              <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
-            </svg>
+            {props.animation === ModalAnimation.Sketch ? sketchSVG() : undefined}
             <div id="modal-content">{props.children ? props.children : defaultModal()}</div>
           </div>
         </div>
