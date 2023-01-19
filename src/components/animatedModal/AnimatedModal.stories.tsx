@@ -5,14 +5,8 @@ import React, { useRef } from 'react';
 import {
   AnimatedModal,
   AnimatedModalObject,
-  AnimatedModalFrame,
-  Unfold,
-  Reveal,
-  Uncover,
-  Flash,
-  Sketch,
-  Slide,
-  BlowUp
+  ModalAnimation,
+  AnimatedModalFrame
 } from '../../components';
 
 export default {
@@ -26,37 +20,37 @@ const AnimatedModalTemplate: Story = () => {
 
   return (
     <>
-      <AnimatedModal ref={ref} animation={new Unfold()} />
+      <AnimatedModal ref={ref} animation={ModalAnimation.Unfold} />
       <AnimatedModalFrame>
         <button onClick={() => ref.current?.OpenModal()}>Open Unfold Modal</button>
         <br />
         <br />
-        <button onClick={() => ref.current?.OpenModal(Reveal.animationName)}>
+        <button onClick={() => ref.current?.OpenModal(ModalAnimation.Reveal)}>
           Open Reveal Modal
         </button>
         <br />
         <br />
-        <button onClick={() => ref.current?.OpenModal(Uncover.animationName)}>
+        <button onClick={() => ref.current?.OpenModal(ModalAnimation.Uncover)}>
           Open Uncover Modal
         </button>
         <br />
         <br />
-        <button onClick={() => ref.current?.OpenModal(Flash.animationName)}>
+        <button onClick={() => ref.current?.OpenModal(ModalAnimation.Flash)}>
           Open Flash Modal
         </button>
         <br />
         <br />
-        <button onClick={() => ref.current?.OpenModal(Sketch.animationName)}>
+        <button onClick={() => ref.current?.OpenModal(ModalAnimation.Sketch)}>
           Open Sketch Modal
         </button>
         <br />
         <br />
-        <button onClick={() => ref.current?.OpenModal(Slide.animationName)}>
+        <button onClick={() => ref.current?.OpenModal(ModalAnimation.Slide)}>
           Open Slide Modal
         </button>
         <br />
         <br />
-        <button onClick={() => ref.current?.OpenModal(BlowUp.animationName)}>
+        <button onClick={() => ref.current?.OpenModal(ModalAnimation.BlowUp)}>
           Open BlowUp Modal
         </button>
         <br />
