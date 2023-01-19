@@ -7,13 +7,13 @@ import { ModalAnimation } from './AnimatedModal.enums';
 /**
  * Animated Modal's props.
  * @interface IAnimatedModalProps
- * @property {boolean} [isOpen] Is modal open?
+ * @property {boolean} [startOpen] Is modal open?
  * @property {ModalAnimation} animation Modal animation
  * @property {React.ReactNode} [children] Modal's children
  * @property {boolean} [closeOnBackgroundClick] Close modal on background click?
  */
 interface IAnimatedModalProps {
-  isOpen?: boolean;
+  startOpen?: boolean;
   animation: ModalAnimation;
   children?: React.ReactNode;
   closeOnBackgroundClick?: boolean;
@@ -115,11 +115,11 @@ const AnimatedModal = forwardRef(
     }
 
     useEffect(() => {
-      if (props.isOpen) {
+      if (props.startOpen) {
         setModalClass(props.animation);
         document.body.classList.add('modal-active');
       }
-    }, [props.isOpen]);
+    }, [props.startOpen]);
 
     /**
      * Default modal.
@@ -166,7 +166,7 @@ AnimatedModal.displayName = 'AnimatedModal';
 
 // Set default props
 AnimatedModal.defaultProps = {
-  isOpen: false,
+  startOpen: false,
   animation: ModalAnimation.Unfold,
   closeOnBackgroundClick: true
 };
