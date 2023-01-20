@@ -1,9 +1,9 @@
 {
   "name": "react-animated-modal",
-  "description": "Animated modal dialog component for react",
+  "description": "Animated modal dialogs for React, easy to use pre-built components for smooth and visually appealing user interactions.",
   "version": "1.0.0",
   "license": "ISC",
-  "author": "Dorbus",
+  "author": "Divyanshu Shekhar",
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -92,5 +92,27 @@
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
-  }
+  },
+  "keywords": [
+    "react",
+    "modal",
+    "dialog",
+    "react-component",
+    "animated-modal",
+    "react-library",
+    "react-component-library",
+    "react-modal",
+    "react-animated-modal",
+    "react-dialog",
+    "animated-dialog",
+    "react-animated-dialog",
+    "react-popup-modal",
+    "react-popup-dialog",
+    "react-animated-popup-modal",
+    "modal-animation",
+    "dialog-animation",
+    "react-modal-animation",
+    "react-dialog-animation",
+    "animation"
+  ]
 }
