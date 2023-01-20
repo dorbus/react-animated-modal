@@ -20,7 +20,12 @@ const AnimatedModalTemplate: Story = () => {
 
   return (
     <>
-      <AnimatedModal ref={ref} animation={ModalAnimation.Unfold} />
+      <AnimatedModal
+        ref={ref}
+        animation={ModalAnimation.Unfold}
+        backgroundStyle={{ backgroundColor: 'blue', opacity: '0.8' }}
+        modalStyle={{ background: 'rgba(122,242,154, 0.5)' }}
+      />
       <AnimatedModalFrame>
         <button onClick={() => ref.current?.OpenModal()}>Open Unfold Modal</button>
         <br />
