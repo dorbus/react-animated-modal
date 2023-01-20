@@ -3,7 +3,19 @@
   "description": "Animated modal dialogs for React, easy to use pre-built components for smooth and visually appealing user interactions.",
   "version": "1.0.0",
   "license": "ISC",
-  "author": "Divyanshu Shekhar",
+  "author": "Divyanshu Shekhar <imdshekhar@gmail.com>",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dorbus/react-animated-modal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dorbus/react-animated-modal/issues"
+  },
+  "homepage": "https://github.com/dorbus/react-animated-modal#readme",
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
