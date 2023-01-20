@@ -66,6 +66,22 @@ const ref = useRef<AnimatedModalObject>(null);
 <AnimatedModal ref={ref} />
 ```
 
+### Opening modal
+
+```typescript
+// Open modal
+ref.current?.OpenModal()
+
+// Open modal with animation
+ref.current?.OpenModal(ModalAnimation.Reveal)
+```
+
+### Closing modal
+
+```typescript
+ref.current?.CloseModal()
+```
+
 ### Modal Animations
 
 For now, the library supports seven different animations:
