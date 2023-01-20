@@ -158,7 +158,7 @@ const AnimatedModal = forwardRef(
           id="animated-modal-background"
           onClick={props.closeOnBackgroundClick ? onBackgroundClick : undefined}>
           <div id="animated-modal">
-            {props.animation === ModalAnimation.Sketch ? sketchSVG() : undefined}
+            {modalClass.includes(ModalAnimation.Sketch) ? sketchSVG() : undefined}
             <div id="modal-content">{props.children ? props.children : defaultModal()}</div>
           </div>
         </div>
