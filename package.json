@@ -1,5 +1,5 @@
 {
-  "name": "react-animated-modal",
+  "name": "@dorbus/react-animated-modal",
   "description": "Animated modal dialogs for React, easy to use pre-built components for smooth and visually appealing user interactions.",
   "version": "1.0.0",
   "license": "ISC",
